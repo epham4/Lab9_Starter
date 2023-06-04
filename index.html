@@ -67,22 +67,47 @@
         <output></output>
       </fieldset>
     </form>
-
+  
     <section id="error-btns">
-      <button>Console Log</button>
-      <button>Console Error</button>
-      <button>Console Count</button>
-      <button>Console Warn</button>
-      <button>Console Assert</button>
-      <button>Console Clear</button>
-      <button>Console Dir</button>
-      <button>Console dirxml</button>
-      <button>Console Group Start</button>
-      <button>Console Group End</button>
-      <button>Console Table</button>
-      <button>Start Timer</button>
-      <button>End Timer</button>
-      <button>Console Trace</button>
+      <button onclick="console.log('Console Log Demo')">Console Log</button>
+      <button onclick="console.error('Console Error Demo')">Console Error</button>
+      <button onclick="console.count('Count Button')">Console Count</button>
+      <button onclick="console.warn('Console Warn Button')">Console Warn</button>
+      <script>
+      let number = 2;
+      let errorMsg = 'The number does not equal 3'
+      </script>
+      <button onclick="console.assert(number == 3, {number, errorMsg})">Console Assert</button>
+      <button onclick="console.clear()">Console Clear</button>
+      <button onclick="console.dir(document.head)">Console Dir</button>
+      <button onclick="console.dirxml(document)">Console dirxml</button>
+      <button onclick="console.group('console.group')">Console Group Start</button>
+      <button onclick="console.groupEnd()">Console Group End</button>
+      <script>
+        var table = [
+          {
+            name: "Software Engineering",
+            num: 110,
+          },
+          {
+            name: "Programming Language",
+            num: 130,
+          },
+          {
+            name: "Advanced Software",
+            num: 112,
+          }
+        ];
+      </script>
+      <button onclick="console.table(table)">Console Table</button>
+      <button onclick="console.time()">Start Timer</button>
+      <button onclick="console.timeEnd()">End Timer</button>
+      <script>
+        let deep = () => {deeper();};
+        let deeper = () => {deepest();};
+        let deepest = () => {console.trace();};
+      </script>
+      <button onclick="deep()">Console Trace</button>
       <button>Trigger a Global Error</button>
     </section>
   </main>
